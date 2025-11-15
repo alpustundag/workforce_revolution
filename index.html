@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRV0JVTY6Q"></script>
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRV0JVTY6Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -27,6 +25,39 @@
             color: #333;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             padding: 20px;
+            position: relative; /* Home butonu için */
+        }
+
+        /* Home Button Styles - Added */
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .home-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
         }
 
         .container {
@@ -372,6 +403,9 @@
             .container {
                 box-shadow: none;
             }
+            .home-btn {
+                display: none; /* Home butonunu baskıda gizle */
+            }
         }
 
         @media (max-width: 768px) {
@@ -390,10 +424,24 @@
             .stat-grid {
                 grid-template-columns: 1fr;
             }
+
+            .home-btn {
+                width: 40px;
+                height: 40px;
+                top: 15px;
+                left: 15px;
+            }
         }
     </style>
 </head>
 <body>
+
+<a href="https://alpustundag.github.io/" class="home-btn" aria-label="Home">
+    <svg viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+</a>
+
 <div class="container">
 <header>
 <h1>🧭 Sectoral Transformation Report in the Age of Agentic AI</h1>
